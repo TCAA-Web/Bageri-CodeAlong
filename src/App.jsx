@@ -17,7 +17,10 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/products" element={<ProductPage />} />
-            <Route path="/products/:id" element={<ProductDetailsPage />} />
+            <Route
+              path="/products/:category/:id"
+              element={<ProductDetailsPage />}
+            />
             <Route path="/*" element={<NotFoundPage />} />
           </Route>
         </Routes>

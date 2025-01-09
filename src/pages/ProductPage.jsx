@@ -17,7 +17,7 @@ export function ProductPage() {
 
   return (
     <>
-      <Section>
+      <Section width={"50%"}>
         <SectionTitle
           title={"Vores elskede bagværk!"}
           text={
@@ -25,7 +25,10 @@ export function ProductPage() {
           }
         />
         <SectionTitle title={data?.item.title} />
-        <GridContainer columns={2}>
+        <GridContainer
+          columns={2}
+          sx={{ gridTemplateColumns: "1fr 4fr", alignItems: "start" }}
+        >
           <ProductMenu setId={setId} />
           <GridContainer columns={4}>
             {data?.item.products.map((product) => {
@@ -36,6 +39,7 @@ export function ProductPage() {
                   title={product.title}
                   text={product.teaser}
                   id={product.id}
+                  category={data?.item.title}
                 />
               );
             })}

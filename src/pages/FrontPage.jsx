@@ -52,6 +52,7 @@ export function FrontPage() {
           {articleImages.map((item) => {
             return (
               <InfoCard
+                key={item.title}
                 imgSrc={item.src}
                 infoTitle={item.title}
                 infoText={item.text}
