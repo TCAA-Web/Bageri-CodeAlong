@@ -1,0 +1,41 @@
+@use "../../styles/variables" as *;
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  margin: auto;
+  // background-color: rgb(120, 120, 222);
+  background-image: url("../../assets/images/slide1.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+
+    li {
+      list-style-type: none;
+
+      h1 {
+        text-align: center;
+        font-size: $font-lg * 1.2;
+        font-family: "lobster";
+        font-weight: 100;
+        color: rgba(240, 240, 240);
+      }
+
+      a {
+        text-decoration: none;
+        color: rgba(240, 240, 240);
+        font-weight: 100;
+        font-family: "opensans";
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

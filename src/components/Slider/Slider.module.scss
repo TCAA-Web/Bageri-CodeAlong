@@ -1,0 +1,76 @@
+@use "../../styles/variables" as *;
+
+.slider {
+  width: 100%;
+  position: relative;
+  img:nth-child(1) {
+    width: 100%;
+  }
+
+  h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: $font-lg * 2;
+    color: $color-white;
+    font-family: "lobster";
+    font-weight: 100;
+    text-shadow: 1px 2px 6px rgba(40, 40, 40, 0.5);
+
+    @media screen and (max-width: 1200px) {
+      font-size: $font-md;
+    }
+  }
+
+  img:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    width: 64px;
+    height: 64px;
+    transform: rotate(180deg);
+    opacity: 0.3;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  img:nth-child(4) {
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    right: 16px;
+    opacity: 0.3;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  div {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    span {
+      display: block;
+      background-color: rgba(170, 170, 170);
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      opacity: 0.4;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .active {
+      opacity: 1;
+    }
+  }
+}

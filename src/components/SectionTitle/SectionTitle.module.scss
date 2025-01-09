@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+
+.sectionTitle {
+  margin-top: 32px;
+  h3 {
+    font-family: "lobster";
+    font-weight: 100;
+    font-size: $font-md * 1.5;
+    text-align: center;
+    margin-bottom: 64px;
+    margin-top: 64px;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+}

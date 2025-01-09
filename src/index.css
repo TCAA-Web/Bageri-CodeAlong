@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'lobster';
+  src: url('../src/assets/fonts/Lobster1.4.otf');
+}
+
+@font-face {
+  font-family: 'opensans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf');
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'opensans';
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1920px;
+}
+
+p, h1, h2, h3, h4, h5{
+  font-weight: lighter;
+  color: rgba(42,42,42);
+  font-family: 'opensans';
+}

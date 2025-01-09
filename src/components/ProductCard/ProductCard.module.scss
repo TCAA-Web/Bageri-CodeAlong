@@ -1,0 +1,48 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 400px;
+  text-align: center;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: rgba(20, 20, 20, 0.4);
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 90%;
+  }
+
+  p {
+    width: 90%;
+  }
+
+  a {
+    width: 90%;
+    height: 42px;
+    border: solid 1px rgba(20, 20, 20, 0.5);
+    color: black;
+    background-color: white;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  a:hover {
+    background-color: rgb(240, 240, 240);
+  }
+}
