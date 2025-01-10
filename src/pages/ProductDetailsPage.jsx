@@ -24,10 +24,14 @@ export function ProductDetailsPage() {
   return (
     <>
       <Section width="50%">
-        <Breadcrumb content={`produkter > ${category} > ${data?.item.title}`} />
+        <Breadcrumb
+          content={`produkter > ${category !== "undefined" ? category : ""} > ${
+            data?.item.title
+          }`}
+        />
         <ProductHeading
           productTitle={data?.item.title}
-          productSubtitle={category}
+          productSubtitle={category !== "undefined" ? category : ""}
         />
       </Section>
       <Section width="50%">
