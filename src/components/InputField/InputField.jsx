@@ -7,7 +7,7 @@ export function InputField({ type, placeholder, name, id, labelText, action }) {
 
   return (
     <>
-      {name && <label htmlFor={name}>{labelText}</label>}
+      {labelText && <label htmlFor={name}>{labelText}</label>}
       <input
         className={style.input}
         name={name}

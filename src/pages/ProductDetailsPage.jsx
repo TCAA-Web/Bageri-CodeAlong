@@ -1,21 +1,31 @@
 import { useParams } from "react-router-dom";
 import { useGet } from "../hooks/useGet";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Section } from "../components/Section/Section";
 import { Breadcrumb } from "../components/Breadcrumb/Breadcrumb";
 import { ProductHeading } from "../components/ProductHeading/ProductHeading";
 import { ProductDescription } from "../components/ProductDescription/ProductDescription";
 import { GridContainer } from "../components/GridContainer/GridContainer";
 import { IngredientList } from "../components/IngredientList/IngredientList";
+import { CommentInput } from "../components/CommentInput/CommentInput";
+import { UserContext } from "../context/userContext";
 
 export function ProductDetailsPage() {
   const { category, id } = useParams();
+
+  const { userData } = useContext(UserContext);
 
   const { data, isLoading, error } = useGet(
     `https://api.mediehuset.net/bakeonline/products/${id}`
   );
 
+  const comments = useGet(
+    `https://api.mediehuset.net/bakeonline/comments/${id}`,
+    userData.access_token
+  );
+
   console.log("Produkt", data);
+  console.log("Comments", comments);
 
   useEffect(() => {
     document.title = `${data?.item.title}`;
@@ -43,6 +53,7 @@ export function ProductDetailsPage() {
 
           {data && <IngredientList ingredients={data?.item.ingredients} />}
         </GridContainer>
+        {userData ? <CommentInput /> : <h4>Du skal være logget ind </h4>}
       </Section>
     </>
   );
