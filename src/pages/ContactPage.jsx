@@ -1,3 +1,9 @@
+import { useEffect } from 'react'
+
 export function ContactPage() {
-  return <h2>Contact page</h2>;
+  useEffect(() => {
+    document.title = 'Kontakt'
+  }, [])
+
+  return <h2>Contact page</h2>
 }
