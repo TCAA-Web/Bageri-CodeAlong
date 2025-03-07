@@ -1,7 +1,7 @@
-@use "../../styles/variables" as *;
+@use '../../styles/variables' as *;
 
 .sectionNewsletter {
-  background-image: url("../../assets/images/newsletterbg.jpg");
+  background-image: url('../../assets/images/newsletterbg.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,12 +11,14 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+  text-align: center;
   div {
-    width: 50%;
+    width: 75%;
     color: white;
+    margin: auto;
 
     h4 {
-      font-family: "lobster";
+      font-family: 'lobster';
       font-size: $font-md;
       color: white;
     }
@@ -24,48 +26,6 @@
       padding: 8px;
       color: white;
       margin-bottom: 8px;
-    }
-
-    div {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 0.5fr 10fr 1fr;
-      align-items: center;
-      justify-content: center;
-      svg {
-        background-color: #bbc8d4;
-        width: 16px;
-        height: 16px;
-        padding: 13px;
-        color: white;
-      }
-      input {
-        height: 42px;
-        width: 100%;
-        border: none;
-        outline: none;
-        background-color: rgb(242, 242, 242);
-        padding-left: 8px;
-        transition: all 0.3s ease;
-      }
-
-      input:focus {
-        border-inline: solid 4px #bbc8d4;
-      }
-
-      button {
-        background-color: #617685;
-        width: 140px;
-        color: white;
-        height: 42px;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      button:hover {
-        background-color: #465560;
-      }
     }
   }
 }

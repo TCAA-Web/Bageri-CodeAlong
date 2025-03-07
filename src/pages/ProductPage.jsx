@@ -1,21 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ProductMenu } from '../components/ProductMenu/ProductMenu'
 import { useGet } from '../hooks/useGet'
 import { GridContainer } from '../components/GridContainer/GridContainer'
 import { ProductCard } from '../components/ProductCard/ProductCard'
 import { Section } from '../components/Section/Section'
 import { SectionTitle } from '../components/SectionTitle/SectionTitle'
+import { usePageTitle } from '../hooks/usePageTitle'
 
 export function ProductPage() {
   const [id, setId] = useState(1)
-
   const { data, isLoading, error } = useGet(
     `https://api.mediehuset.net/bakeonline/categories/${id}`
   )
-
-  useEffect(() => {
-    document.title = `Produkter`
-  }, [])
+  usePageTitle('Product page')
 
   console.log('Produkter', data)
 

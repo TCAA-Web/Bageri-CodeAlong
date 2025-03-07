@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useGet } from '../hooks/useGet'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { Section } from '../components/Section/Section'
 import { Breadcrumb } from '../components/Breadcrumb/Breadcrumb'
 import { ProductHeading } from '../components/ProductHeading/ProductHeading'
@@ -9,6 +9,7 @@ import { GridContainer } from '../components/GridContainer/GridContainer'
 import { IngredientList } from '../components/IngredientList/IngredientList'
 import { CommentInput } from '../components/CommentInput/CommentInput'
 import { UserContext } from '../context/userContext'
+import { usePageTitle } from '../hooks/usePageTitle'
 
 export function ProductDetailsPage() {
   const { category, id } = useParams()
@@ -27,9 +28,7 @@ export function ProductDetailsPage() {
   console.log('Produkt', data)
   console.log('Comments', comments)
 
-  useEffect(() => {
-    document.title = `${data?.item.title}`
-  }, [data])
+  usePageTitle(`${data?.item.title}`)
 
   if (isLoading) {
     return <p>Loading...</p>
